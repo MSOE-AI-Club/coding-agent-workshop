@@ -213,7 +213,10 @@ Core features:
 A bad plan is cheap to fix; bad code is not. Before building the app, let's have the agent propose a plan and verify that it covers every requirement in `SPEC.md`.
 
 1. **Create the Plan:**
-   * Switch your agent to **Plan Mode** (or ask it: *"Read `SPEC.md` and propose a step-by-step implementation plan for building and testing this app. Do not write the code yet."*).
+   * Switch your agent to **Plan Mode** and ask it to generate a plan:
+     ```text
+     Read `SPEC.md` and propose a step-by-step implementation plan for building and testing this app. Do not write the code yet.
+     ```
 2. **Check the Plan with `plan-review`:**
    * Read [`skills/plan-review/SKILL.md`](skills/plan-review/SKILL.md).
    * Prompt your agent:
