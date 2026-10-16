@@ -64,6 +64,24 @@ Take a quick look around the repository:
 * [`skill-template.md`](skill-template.md) — A starter template for creating your own custom agent skills.
 * `README.md` — This workshop walkthrough!
 
+### Set Up a Python Virtual Environment (`.venv`)
+
+Before building or installing packages, create and activate a virtual environment named `.venv` in the root of your workspace:
+
+**macOS / Linux:**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+**Windows (PowerShell):**
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+*(If PowerShell blocks script activation, run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` first, or ask your coding agent in chat: `"Set up a .venv virtual environment and activate it"`).*
+
 <span style="color:#ff5555;font-weight:bold;font-size:1.5rem;">
     🛑 STOP
 </span>
@@ -72,8 +90,8 @@ Take a quick look around the repository:
 
 ---
 
-> **Checkpoint:** Make sure you have the `coding-agent-workshop` folder open as your active workspace in your IDE/agent.  
-> *Done early? Browse the folders inside `skills/` to see the 5 skills we'll be using.*
+> **Checkpoint:** Make sure you have `coding-agent-workshop` open as your active workspace and `.venv` created in the workspace root.  
+> *Done early? Activate your virtual environment and browse the folders inside `skills/`.*
 
 ---
 
@@ -177,6 +195,7 @@ Use the write-spec skill to write a SPEC.md for a lightweight full-stack Python 
 
 Tech stack constraints:
 - Backend: Python with FastAPI (or Flask) and a local SQLite database
+- Environment: Use the existing `.venv` virtual environment in the workspace root
 - Frontend: A single-page HTML/CSS/JS interface served directly by the Python backend
 - Testing: pytest for backend API and edge-case tests
 
@@ -253,7 +272,7 @@ Now that you have an approved `SPEC.md` and implementation plan, let the agent b
 ### 1. Build the Implementation
 Prompt your agent:
 ```text
-Implement the approved plan from SPEC.md. Set up a virtual environment (or requirements.txt), build the SQLite database layer, Python backend, and HTML/JS frontend, and write the pytest suite.
+Implement the approved plan from SPEC.md. Install required packages (such as fastapi, uvicorn, pytest, httpx or flask) into the root .venv virtual environment, build the SQLite database layer, Python backend, and HTML/JS frontend, and write the pytest suite.
 ```
 
 Watch the agent's **ReAct loop** in action:
